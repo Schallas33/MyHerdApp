@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyHerdApp.Pages.MyFarmsPage.FarmCampsPage.FarmCampsPage">
+    
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="{Binding FarmName}"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Camp"
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="FarmCampsListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+              RowHeight="80" 
+              Header="{Binding}">
+
+        <ListView.HeaderTemplate >
+            <DataTemplate>
+                <ContentView Padding="5">
+                    <Frame  OutlineColor="DarkKhaki"
+                            Padding="10">
+                        <StackLayout>
+                            <Label Text="Totals"
+                               FontSize="26"
+                               FontAttributes="Bold"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"/>
+                            <StackLayout Orientation="Horizontal"
+                                             HorizontalOptions="Center">
+                                <Label Text="{Binding [0], StringFormat='Females: {0}'}"
+                                           FontSize="20"
+                                           VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding [1], StringFormat='Infants: {0}'}"
+                                           FontSize="20"
+                                           VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding [2], StringFormat='Males: {0}'}"
+                                           FontSize="20"
+                                           VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </ContentView>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Edit Camp"
+                                  Clicked="Edit_Clicked"
+                                  CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete Camp"
+                                  IsDestructive="True"
+                                  Clicked="Delete_Clicked"
+                                  CommandParameter="{Binding .}"/>
+                    </ViewCell.ContextActions>
+                    <ContentView Padding="5">
+                        <Frame OutlineColor="DarkKhaki"
+                           Padding="5">
+                            <StackLayout>
+                                <Label Text="{Binding CampName}"
+                                   FontSize="Body"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                                <StackLayout Orientation="Horizontal"
+                                             HorizontalOptions="Center">
+                                    <Label Text="{Binding Females, StringFormat='Females: {0}'}"
+                                           FontSize="18"
+                                           VerticalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Infants, StringFormat='Infants: {0}'}"
+                                           FontSize="18"
+                                           VerticalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Males, StringFormat='Males: {0}'}"
+                                           FontSize="18"
+                                           VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+  </ListView>
+</ContentPage>

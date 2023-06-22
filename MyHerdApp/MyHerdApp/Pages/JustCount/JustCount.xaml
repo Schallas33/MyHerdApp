@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyHerdApp.Pages.JustCountPage.JustCount">
+
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand"
+              HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label x:Name="campName"
+                   Text="JUST COUNT"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Margin="10, 30, 10, 10"
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            <Label x:Name="females" 
+                   Text="Females"
+                   FontSize="Large"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <Button x:Name="femalesMinus"
+                    Text="-"
+                    Clicked="femalesMinus_Clicked"
+                    Grid.Row="2"
+                    Grid.Column="0" />
+            <Entry x:Name="femalesCount"
+                   Text="0"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"/>
+            <Button x:Name="femalesPlus"
+                    Text="+"
+                    Clicked="femalesPlus_Clicked"
+                    Grid.Row="2"
+                   Grid.Column="2"/>
+            <Label x:Name="infants" 
+                   Text="Infants"
+                   FontSize="Large"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <Button x:Name="infantsMinus"
+                    Text="-"
+                    Clicked="infantsMinus_Clicked"
+                    Grid.Row="4"
+                   Grid.Column="0"/>
+            <Entry x:Name="infantsCount"
+                   Text="0"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"/>
+            <Button x:Name="infantsPlus"
+                    Text="+"
+                    Clicked="infantsPlus_Clicked"
+                    Grid.Row="4"
+                    Grid.Column="2"/>
+            <Label x:Name="males" 
+                   Text="Males"
+                   FontSize="Large"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <Button x:Name="MalesMinus"
+                    Text="-"
+                    Clicked="MalesMinus_Clicked"
+                    Grid.Row="6"
+                   Grid.Column="0"/>
+            <Entry x:Name="malesCount"
+                   Text="0"
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"/>
+            <Button x:Name="malesPlus"
+                    Text="+"
+                    Clicked="malesPlus_Clicked"
+                    Grid.Row="6"
+                    Grid.Column="2"/>
+            <Button x:Name="resetButton" 
+                    Text="Reset"
+                    Margin="0, 20, 0, 0"
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Clicked="resetButton_Clicked"/>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

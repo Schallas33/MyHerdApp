@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyHerdApp.MainPage">
+
+    <StackLayout>
+        <Label Text="Welcome to My Herd"
+               Margin="0, 30, 0, 20"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"
+               FontSize="Large"
+               FontAttributes="Bold"
+               TextColor="Black"/>
+        <Image x:Name="Logo"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               HeightRequest="120"
+               Margin="0,50,0,50"/>
+        <Button x:Name="countButton"
+                Text="Just Count"
+                Margin="20, 10,20,10"
+                BackgroundColor="DarkKhaki"
+                Clicked="countButton_Clicked"/>
+        <Button x:Name="myFarms"
+                Text="My Farms"
+                Margin="20, 10, 20, 10"
+                BackgroundColor="DarkKhaki"
+                Clicked="myFarms_Clicked"/>
+        <Button x:Name="myEvents"
+                Text="My Events"
+                Margin="20, 10, 20, 10"
+                BackgroundColor="DarkKhaki"
+                Clicked="myEvents_Clicked"/>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyHerdApp.Pages.MyFarmsPage.FarmCampsPage.CampCountPage.CampCounterPage">
+
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="{Binding CampName}"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand"
+              HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="campName"
+                   Text=""
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Margin="10, 10, 10, 0"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Label x:Name="lastCountDate"
+                   Text=""
+                   Grid.Row="1"
+                   FontSize="Medium"
+                   HorizontalTextAlignment="Center"
+                   Grid.ColumnSpan="3"/>
+            <Label x:Name="females" 
+                   Text=""
+                   FontSize="Large"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <Button x:Name="femalesMinus"
+                    Text="-"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Clicked="femalesMinus_Clicked"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    BackgroundColor="DarkKhaki"/>
+            <Entry x:Name="femalesCount"
+                   Keyboard="Numeric"
+                   Placeholder="0"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   Unfocused="femalesCount_Unfocused"/>
+            <Button x:Name="femalesPlus"
+                    Text="+"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Clicked="femalesPlus_Clicked"
+                    Grid.Row="3"
+                   Grid.Column="2"
+                    BackgroundColor="DarkKhaki"/>
+            <Label x:Name="infants" 
+                   Text=""
+                   FontSize="Large"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <Button x:Name="infantsMinus"
+                    Text="-"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Clicked="infantsMinus_Clicked"
+                    Grid.Row="5"
+                   Grid.Column="0"
+                    BackgroundColor="DarkKhaki"/>
+            <Entry x:Name="infantsCount"
+                   Keyboard="Numeric"
+                   Placeholder="0"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   Unfocused="infantsCount_Unfocused"/>
+            <Button x:Name="infantsPlus"
+                    Text="+"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Clicked="infantsPlus_Clicked"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    BackgroundColor="DarkKhaki"/>
+            <Label x:Name="males" 
+                   Text=""
+                   FontSize="Large"
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <Button x:Name="MalesMinus"
+                    Text="-"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Clicked="MalesMinus_Clicked"
+                    Grid.Row="7"
+                   Grid.Column="0"
+                    BackgroundColor="DarkKhaki"/>
+            <Entry x:Name="malesCount"
+                   Keyboard="Numeric"
+                   Placeholder="0"
+                   Grid.Row="7"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   Unfocused="malesCount_Unfocused"/>
+            <Button x:Name="malesPlus"
+                    Text="+"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Clicked="malesPlus_Clicked"
+                    Grid.Row="7"
+                    Grid.Column="2"
+                    BackgroundColor="DarkKhaki"/>
+            <Button x:Name="UpdateButton" 
+                    Text="Update"
+                    Margin="0, 20, 0, 0"
+                    Grid.Row="9"
+                    Grid.Column="1"
+                    BackgroundColor="DarkKhaki"
+                    Clicked="UpdateButton_Clicked"/>
+            <Entry x:Name="Notes"
+                   Placeholder="Enter Your Notes Here"
+                   HorizontalTextAlignment="Center"
+                   Margin="5"
+                   Grid.Row="10"
+                   Grid.ColumnSpan="3"
+                   Unfocused="Notes_Unfocused"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

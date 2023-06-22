@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyHerdApp.Pages.MyFarmPage.MyFarmsPage">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+            <Label Text="MY FARMS"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Farm"
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="MyFarmsListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Edit Farm"
+                                  Clicked="Edit_Clicked"
+                                  CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete Farm"
+                                  IsDestructive="True"
+                                  Clicked="Delete_Clicked"
+                                  CommandParameter="{Binding .}"/>
+                    </ViewCell.ContextActions>
+                    <ContentView Padding="5">
+                        <Frame OutlineColor="DarkKhaki"
+                           Padding="5">
+                            <StackLayout>
+                                <Label Text="{Binding FarmName}"
+                                   FontSize="Body"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
